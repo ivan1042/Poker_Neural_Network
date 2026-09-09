@@ -1,0 +1,17 @@
+Cards are represented in scale of 1-13/13 to adjust to scale of 0-1
+
+stages are represented by one hot column
+
+My hand combined with community card to derive suit and straight potential,
+1-5/5 to scale of 0-1
+
+position is derived from distance from button,
+0-5/6 to the scale of 0-0.833
+
+if-fold is 0/1 catagory
+
+action mapping as below:
+0: fold
+1: check
+2: call
+3: raise
