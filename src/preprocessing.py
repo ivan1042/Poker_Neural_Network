@@ -8,7 +8,6 @@ def build_preprocessor():
     numeric_cols = [
         "hero_r1",
         "hero_r2",
-        "stage_pre",
         "suit_po",
         "stra_po",
         "gut_po",

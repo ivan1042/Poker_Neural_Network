@@ -1,3 +1,5 @@
+import numpy as np
+
 def preflop_data(data):
     temp = data[data["stage_pre"] == 1]
     return temp
@@ -29,4 +31,7 @@ def action_label(df):
     df.fillna({"action": "call"}, inplace=True)
 
     return df
-
+def hand_label(df):
+    # Sorts each row descending and re-assigns the columns
+    df[['hero_r1', 'hero_r2']] = np.sort(df[['hero_r1', 'hero_r2']].values, axis=1)[:, ::-1]
+    return df

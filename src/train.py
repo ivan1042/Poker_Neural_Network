@@ -1,11 +1,6 @@
 import pandas as pd
-
-from sklearn.model_selection import (
-    GridSearchCV,
-    RepeatedStratifiedKFold,
-)
+from sklearn.model_selection import GridSearchCV,RepeatedStratifiedKFold
 from sklearn.pipeline import Pipeline
-
 from src.models import get_model_specs
 from src.preprocessing import build_preprocessor
 
@@ -51,18 +46,10 @@ def compare_models(X_train, y_train):
 
         summary.append({
             "model": name,
-            "cv_macro_f1": search.cv_results_[
-                "mean_test_macro_f1"
-            ][best_index],
-            "cv_macro_f1_std": search.cv_results_[
-                "std_test_macro_f1"
-            ][best_index],
-            "train_macro_f1": search.cv_results_[
-                "mean_train_macro_f1"
-            ][best_index],
-            "balanced_accuracy": search.cv_results_[
-                "mean_test_balanced_accuracy"
-            ][best_index],
+            "cv_macro_f1": search.cv_results_["mean_test_macro_f1"][best_index],
+            "cv_macro_f1_std": search.cv_results_["std_test_macro_f1"][best_index],
+            "train_macro_f1": search.cv_results_["mean_train_macro_f1"][best_index],
+            "balanced_accuracy": search.cv_results_["mean_test_balanced_accuracy"][best_index],
             "best_parameters": search.best_params_,
         })
 
