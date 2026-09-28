@@ -1,3 +1,7 @@
+def preflop_data(data):
+    temp = data[data["stage_pre"] == 1]
+    return temp
+
 def position_mapping(df, y = "position_norm"):
     POSITION_MAP = {
         0.000: "BTN",
