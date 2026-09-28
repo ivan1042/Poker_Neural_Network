@@ -1,6 +1,6 @@
 import pandas as pd
 
-existing = pd.read_csv("../parsed_save2.csv", index_col=0)
+existing = pd.read_csv("../data/parsed_save2.csv", index_col=0)
 
 # 0: fold/ check, 1: call, 2: raise >1/2, 3: raise <1/2
 def categorizer(row):
