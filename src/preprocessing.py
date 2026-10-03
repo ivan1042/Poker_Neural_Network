@@ -10,7 +10,6 @@ def build_preprocessor():
         "hero_r2",
         "suit_po",
         "stra_po",
-        "gut_po",
         "facing_ratio"
     ]
 
