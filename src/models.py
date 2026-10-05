@@ -36,7 +36,7 @@ def get_model_specs():
             param_grid={
                 "model__max_depth": [2,3,4,5,6,None,],
             }),
-        "support vector": ModelSpec(estimator=CalibratedClassifierCV(SVC(), ensemble=False),
+        "support vector": ModelSpec(estimator=SVC(probability=True),
             param_grid={
                 "model__C": [0.001, 0.01, 0.1, 1, 10, 100],
                 "model__class_weight": [None, "balanced"]
