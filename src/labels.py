@@ -25,7 +25,6 @@ def x_y_separator(df, y = "action"):
 
 def action_label(df):
     df.loc[df["if_fold"] == 1, "action"] = "fold"
-    df.loc[(df["if_fold"] == 0) & (df["hero_bet_ratio"] == 0), "action"] = "check"
     df.loc[(df["facing_ratio"] < df["hero_bet_ratio"]) & (df["action"] != 0) & (
                 df["action"] != 1), "action"] = "raise"
     df.fillna({"action": "call"}, inplace=True)
